@@ -39,6 +39,8 @@ Copyright (c) 2025 Kingston University. All rights reserved.
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Interactive guide to understanding grade descriptors for BA (Hons) Fashion Communication and Promotion at Kingston University. Learn what tutors look for at each grade level.">
+    <meta name="keywords" content="grade descriptors, fashion, Kingston University, assessment criteria, grading rubric">
     <title>BA (Hons) Fashion - Understanding Grade Descriptors</title>
     <!-- 
     ==============================================
@@ -187,16 +189,16 @@ Copyright (c) 2025 Kingston University. All rights reserved.
         Contains the header and React application.
         -->
         <div class="ku-content">
-            <!-- 
+            <!--
             ==============================================
             HEADER SECTION
             ==============================================
             CUSTOMIZATION:
-            - Update the .png source to your saved image path
-            - Modify the title and descriptive text
+            - Replace the logo in the images/ directory with your own
+            - Update the title and descriptive text
             -->
             <div class="header">
-                <img src="https://canvas.kingston.ac.uk/files/6312216/download?download_frd=1" alt="Kingston School of Art Logo" class="w-64 sm:w-72 md:w-80 lg:w-96 mb-6 mx-auto block object-contain">
+                <img src="images/BA_FPC_Understanding_Grade_Descriptors_Image.png" alt="Kingston School of Art Logo" loading="eager" class="w-64 sm:w-72 md:w-80 lg:w-96 mb-6 mx-auto block object-contain">
                 <h1 class="text-2xl font-bold mb-4">Understanding Grade Descriptors</h1>
                 <p>This interactive guide aims to help you understand the grade descriptors used to assess your work on the BA (Hons) Fashion Communication and Promotion program. Click on each grade band to see what tutors look for, and to understand the key differences between grade bands. This will help you in your efforts to achieve higher grades, through identifying specific areas for improvement.</p>
             </div>
@@ -278,8 +280,7 @@ Copyright (c) 2025 Kingston University. All rights reserved.
                 { title: 'Communication & Presentation', description: 'Your tutors expect extremely clear and professional presentation that convincingly communicates your ideas. Your work should show you understand your audience\'s needs and have carefully selected and refined your materials to create maximum impact.' },
                 { title: 'Personal & Professional Development', description: 'Your tutors are looking for evidence that you can integrate your personal identity into your professional practice. You should demonstrate that you can work productively on your own, collaborate effectively in teams, and take leadership roles when needed. You should take full responsibility for your own learning and development.' },
                 { title: 'Technical Skills', description: 'Your tutors expect exceptional use of fashion and industry-specific technical and digital skills. You should demonstrate outstanding mastery of relevant resources, workshops, and equipment, using these tools to achieve professional-level outcomes that support your creative vision.' }
-             // Additional qualities would go here...
-            ]
+              ]
             },
             {
               id: 'first',
@@ -364,21 +365,12 @@ Copyright (c) 2025 Kingston University. All rights reserved.
                 { title: 'Personal & Professional Development', description: 'Your tutors need to see evidence of awareness of your subject area and personal strengths. You must demonstrate some reflection, planning, and application, and show that you can work productively either individually or in a team.' },
                 { title: 'Technical Skills', description: 'Your tutors must see evidence of fashion and industry-specific technical and digital skills in your work. You need to demonstrate at least limited use of university resources, workshops, and equipment to meet the minimum requirements for this level of study.' }
               ]
-             // Additional grade bands would go here...
             }
           ];
-          
-          // Include all grade levels for the matrix popup
-          const matrixGrades = [
-            grades[0], // Distinction
-            grades[1], // First Class
-            grades[2], // Upper Second (2:1)
-            grades[3], // Lower Second (2:2)
-            grades[4], // Third Class
-            grades[5], // Marginal Fail
-            grades[6]  // Fail
-          ];
-          
+
+          // Use all grades for the matrix popup
+          const matrixGrades = grades;
+
           const activeGradeData = grades.find(grade => grade.id === activeGrade);
           
           return (
