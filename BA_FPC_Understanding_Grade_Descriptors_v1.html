@@ -52,10 +52,10 @@ Copyright (c) 2025 Kingston University. All rights reserved.
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Load React -->
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>  
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
     <!-- Load Babel to handle JSX -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -620,8 +620,18 @@ Copyright (c) 2025 Kingston University. All rights reserved.
           );
         };
         
-        // Render the app
-        ReactDOM.render(<GradeDescriptors />, document.getElementById('grade-descriptors-app'));
+        // Render the app with error handling
+        try {
+            ReactDOM.render(<GradeDescriptors />, document.getElementById('grade-descriptors-app'));
+        } catch (error) {
+            console.error('Error rendering Grade Descriptors app:', error);
+            document.getElementById('grade-descriptors-app').innerHTML =
+                '<div style="padding: 20px; background-color: #ffcccc; border: 2px solid #cc0000; border-radius: 4px;">' +
+                '<h3 style="color: #cc0000; margin-top: 0;">Application Error</h3>' +
+                '<p>There was an error loading the interactive grade descriptors. Please try refreshing the page.</p>' +
+                '<p style="font-size: 0.9em; color: #666;">Error details: ' + error.message + '</p>' +
+                '</div>';
+        }
     </script>
 </body>
 </html>
